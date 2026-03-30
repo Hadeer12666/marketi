@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 1. الخلفية -->
+    <item>
+        <bitmap android:gravity="fill" android:src="@drawable/background"/>
+    </item>
+    
+    <!-- 2. اللوجو الرئيسي (الحجم والموضع الدقيق) -->
+    <item>
+        <bitmap 
+            android:gravity="left|top"
+            android:x="37dp"
+            android:y="278dp"
+            android:width="300dp"
+            android:height="256dp"
+            android:src="@drawable/splash"/>
+    </item>
+    
+    <!-- 3. الـ Branding (في الأسفل) -->
+    <item android:bottom="0dp">
+        <bitmap android:gravity="bottom" android:src="@drawable/branding"/>
+    </item>
+</layer-list>
