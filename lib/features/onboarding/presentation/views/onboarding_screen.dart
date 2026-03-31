@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marketi_e_commerce_app/core/database/cashe/cashe_helper.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marketi_e_commerce_app/core/services/get_it.dart';
 import 'package:marketi_e_commerce_app/features/onboarding/presentation/views/widgets/get_buttons.dart';
 import 'package:marketi_e_commerce_app/features/onboarding/presentation/views/widgets/onboarding_body.dart';
 
@@ -16,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   int currentIndex = 0;
 
   void _finishOnboarding() async {
-    await CacheHelper.setOnBoarding(value: true);
+    await getIt<CacheHelper>().setOnBoarding(value: true);
     context.go('/login');
   }
 

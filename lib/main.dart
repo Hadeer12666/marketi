@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:marketi_e_commerce_app/core/database/cashe/cashe_helper.dart';
 import 'package:marketi_e_commerce_app/core/routs/app_routs.dart';
+import 'package:marketi_e_commerce_app/core/services/get_it.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized(); // 🔹 () مهم
-  await CacheHelper.init(); // 🔹 static method
+  WidgetsFlutterBinding.ensureInitialized();
+  setup();
+  await getIt<CacheHelper>().init();
   runApp(const MyApp());
 }
 

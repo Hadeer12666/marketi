@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:marketi_e_commerce_app/core/database/cashe/cashe_helper.dart';
 import 'package:go_router/go_router.dart';
+import 'package:marketi_e_commerce_app/core/services/get_it.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -22,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (!mounted) return;
 
-    bool seenOnboarding = CacheHelper.getOnBoarding() ?? false;
+    bool seenOnboarding = getIt<CacheHelper>().getOnBoarding() ?? false;
     bool loggedIn = CacheHelper.getUserLoggedIn() ?? false;
 
     if (seenOnboarding) {

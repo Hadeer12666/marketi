@@ -33,13 +33,16 @@ class _LoginScreenState extends State<LoginScreen> {
             width: 272,
           ),
           const SizedBox(height: 32),
-          const CustomTextField(hint: "Username or Email", icon: Icons.email),
+          const CustomTextField(
+            hint: "Username or Email",
+            icon: Icon(Icons.email),
+          ),
 
           const SizedBox(height: 14),
 
           const CustomTextField(
             hint: "Password",
-            icon: Icons.lock,
+            icon: Icon(Icons.lock),
             isPassword: true,
           ),
           const SizedBox(height: 6),

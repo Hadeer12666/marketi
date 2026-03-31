@@ -4,7 +4,7 @@ class CacheHelper {
   static late SharedPreferences sharedPreferences;
 
   /// 🔹 Initialize SharedPreferences
-  static Future<void> init() async {
+  Future<void> init() async {
     sharedPreferences = await SharedPreferences.getInstance();
   }
 
@@ -21,7 +21,7 @@ class CacheHelper {
   }
 
   /// 🔹 Generic Get method
-  static dynamic getData({required String key}) {
+  dynamic getData({required String key}) {
     return sharedPreferences.get(key);
   }
 
@@ -40,9 +40,9 @@ class CacheHelper {
   /// 🔹 Onboarding
   static const String _onboardingKey = "isOnBoardingVisited";
 
-  static bool? getOnBoarding() => sharedPreferences.getBool(_onboardingKey);
+  bool? getOnBoarding() => sharedPreferences.getBool(_onboardingKey);
 
-  static Future<void> setOnBoarding({required bool value}) =>
+  Future<void> setOnBoarding({required bool value}) =>
       saveData(key: _onboardingKey, value: value);
 
   /// 🔹 User logged in
@@ -53,7 +53,6 @@ class CacheHelper {
   static Future<void> setUserLoggedIn({required bool value}) =>
       saveData(key: _isLoggedInKey, value: value);
 
-  /// 🔹 User token
   static const String _tokenKey = "userToken";
 
   static String? getUserToken() => sharedPreferences.getString(_tokenKey);
@@ -61,7 +60,6 @@ class CacheHelper {
   static Future<void> setUserToken({required String token}) =>
       saveData(key: _tokenKey, value: token);
 
-  /// 🔹 User data (as JSON string)
   static const String _userDataKey = "userData";
 
   static String? getUserData() => sharedPreferences.getString(_userDataKey);
